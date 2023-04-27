@@ -1,0 +1,101 @@
+@import "../../assets/styles/hairline.scss";
+//import这行一定要加分号，不然报错media query expected
+// @import "@/scss/hairline.scss";
+.root {
+     :global {
+        .login-form {
+            padding: 0 33px;
+            .adm-form {
+                --border-top: solid 1px var(--adm-translate-color);
+                --border-bottom: solid 1px var(--adm-translate-color);
+            }
+            .title {
+                margin: 54px 0 13px 0;
+            }
+            .adm-list {
+                --align-items: end !important;
+            }
+            .adm-list-default {
+                border: none;
+            }
+            .adm-list-item {
+                padding: 0;
+            }
+            .login-item {
+                // 注意：因为 1px 边框样式使用了决定定位，所以，此处需要将设置为相对定位
+                position: relative;
+                // 为该元素设置 1px 边框
+                // @include hairline(bottom, #f0f0f0);
+                >.adm-list-item-content {
+                    height: 70px;
+                }
+            }
+            .adm-list-item-content {
+                position: relative;
+                // border-bottom: none;
+                // border-top: none;
+            }
+            // 验证码
+            .login-code-extra {
+                >.adm-list-item-content {
+                    align-items: center;
+                    padding: 0;
+                    border: none;
+                }
+                .adm-list-item-content-extra {
+                    position: absolute;
+                    right: 0;
+                    // bottom: 24px;
+                    bottom: 10px;
+                }
+            }
+            .adm-input-wrapper {
+                --placeholder-color: #a5a6ab;
+            }
+            .code-extra {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+                color: #595769;
+                font-size: 14px;
+                &-disabled {
+                    color: #a5a6ab;
+                }
+            }
+            .adm-list-item-description {
+                position: absolute;
+                bottom: -10px;
+                font-size: 12px;
+                z-index: 999;
+            }
+            .login-submit {
+                height: 50px;
+                margin-top: 38px;
+                border: none;
+                font-size: 16px;
+                background: linear-gradient(315deg, #fe4f4f, #fc6627);
+            }
+        }
+    }
+}
+
+// .root {
+//      :global {
+//         .login-form {
+//             padding: 10px 30px;
+//             background-color: red;
+//             .login-item {
+//                 padding: 0;
+//                 background-color: pink;
+//             }
+//             .list-item-extra {
+//                 padding: 0;
+//             }
+//             .login-sumit {
+//                 padding: 0;
+//                 height: 50px;
+//                 border: none;
+//             }
+//         }
+//     }
+// }
