@@ -1,11 +1,11 @@
 import { LoginForm, ResponseResult, Token } from "src/types/data";
-import { LoginAction, LoginThunkAction } from "src/types/store";
+import { LoginAction, RootThunkAction } from "src/types/store";
 import http from "src/utils/request";
 import { setToken } from "src/utils/token";
 
 // export const LoginTask:LoginThunkAction=async(dispatch)=>{}
 
-export const loginActionCreator = (loginForm: LoginForm): LoginThunkAction => {
+export const loginActionCreator = (loginForm: LoginForm): RootThunkAction => {
   return async (dispatch) => {
     //进行网络请求
     const res = await http.post<ResponseResult<Token>>(

@@ -8,7 +8,7 @@ import {
   Toast,
 } from "antd-mobile";
 import styles from "./index.module.scss";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LoginForm } from "src/types/data";
 import { loginActionCreator } from "src/store/actions/login";
@@ -19,6 +19,7 @@ import { sendCode } from "src/services/login";
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const location = useLocation<{ url: string }>();
   const onFinish = async (values: LoginForm) => {
     console.log(values);
 
@@ -29,7 +30,12 @@ const Login = () => {
         content: "登陆成功啦哈哈哈",
         duration: 1000,
         afterClose: () => {
-          history.push("/home");
+          if (location.state.url) {
+            //跳回到之前的页面
+            history.replace(location.state.url);
+          } else {
+            history.push("/home");
+          }
         },
       });
     } catch (e) {
@@ -89,8 +95,7 @@ const Login = () => {
   //清除定时器
   useEffect(() => {
     return clearInterval(timer.current);
-  },[]);
-
+  }, []);
 
   return (
     <div className={styles.root}>
