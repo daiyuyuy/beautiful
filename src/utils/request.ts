@@ -81,10 +81,14 @@ http.interceptors.response.use(
         } catch (e) {
           //换取token失败，跳转登陆页面
           history.replace("/login");
+          setToken({
+            token: "",
+            refresh_token: "",
+          });
         }
       } else {
         //直接跳转到登陆页面
-        
+
         history.replace("/login");
       }
     }

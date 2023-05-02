@@ -121,7 +121,7 @@ const ProfileEdit = () => {
             "--border-bottom": "1px solid #F0F0F0",
           }}
           onBack={() => {
-            history.go(-1);
+            history.push("/home/profile");
           }}
         >
           个人信息

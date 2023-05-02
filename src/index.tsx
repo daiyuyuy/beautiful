@@ -11,6 +11,17 @@ import store from "./store";
 
 import history  from "./router";
 
+import dayjs from "dayjs";
+
+import relactiveTime from "dayjs/plugin/relativeTime";
+
+import "dayjs/locale/zh-cn";
+
+dayjs.locale("zh-cn");
+
+//启用fromNow插件，可以让日期显示成相对日期 （xxx天前）
+dayjs.extend(relactiveTime);
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

@@ -53,3 +53,5 @@ export const updataUserPhoto=(formData:FormData):RootThunkAction=>{
         dispatch(getUserDetailInfo())
     }
 }
+
+

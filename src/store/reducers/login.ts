@@ -13,7 +13,7 @@ const initState: LoginState = {
   },
 };
 
-export function LoginReducer(
+export function loginReducer(
   state: LoginState = initState,
   action: LoginAction
 ): LoginState {

@@ -1,4 +1,4 @@
-@import '../../assets//styles//hairline.scss';
+@import '../../../assets/styles/hairline.scss';
 .root {
     position: fixed;
     top: 0;
@@ -31,6 +31,7 @@
                 width: 32px;
                 height: 32px;
                 margin-right: 8px;
+                color: aqua;
             }
             .message {
                 max-width: 254px;

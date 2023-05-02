@@ -30,12 +30,14 @@ const Login = () => {
         content: "登陆成功啦哈哈哈",
         duration: 1000,
         afterClose: () => {
-          if (location.state.url) {
-            //跳回到之前的页面
-            history.replace(location.state.url);
-          } else {
-            history.push("/home");
-          }
+          // if (location.state.url) {
+          // // 跳回到之前的页面
+          //   history.replace(location.state.url);
+          // } else {
+          //   history.push("/home");
+          // }
+
+          history.replace(location.state?.url || "/home");
         },
       });
     } catch (e) {

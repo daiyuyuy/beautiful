@@ -31,6 +31,9 @@ const AuthRoute = ({ component, children, ...rest }: RouteProps) => {
             return children;
           }
         }
+
+        console.log(props.location.pathname);
+        
         return (
           <Redirect
             to={{
