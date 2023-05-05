@@ -1,7 +1,14 @@
 import store from "src/store";
 
 import { ThunkAction } from "redux-thunk";
-import { UserInterInfo, Token, UserBasicInfo, Channel } from "./data";
+import {
+  UserInterInfo,
+  Token,
+  UserBasicInfo,
+  Channel,
+  ArticleInfo,
+  CommentRes,
+} from "./data";
 
 //payload:传入新的token属性
 export type LoginAction = {
@@ -46,6 +53,16 @@ export type ChannelArticleAction = {
   };
 };
 
+export type ArticleInfoAction = {
+  type: "article/set_article_info";
+  payload: ArticleInfo;
+};
+
+export type CommentResAction = {
+  type: "comment/set_comment_res";
+  payload: CommentRes;
+};
+
 export type RootState = ReturnType<typeof store.getState>;
 
 export type RootAction =
@@ -55,7 +72,9 @@ export type RootAction =
   | UserChannelAction
   | AllChannelAction
   | CurrentChannelAction
-  | ArticleAction;
+  | ChannelArticleAction
+  | ArticleInfoAction
+  | CommentResAction;
 
 // export type LoginThunkAction = ThunkAction<
 //   void,

@@ -7,6 +7,7 @@ import ProfileEdit from "./pages/Profile/Edit";
 // import { hasToken } from "./utils/token";
 import AuthRoute from "./components/AuthRoute";
 import Chat from "./pages/Profile/Chat";
+import Article from "./pages/Home/Article";
 // import Login from "./pages/Login";
 
 //路由懒加载
@@ -56,15 +57,17 @@ function App() {
           ></AuthRoute> */}
 
           <AuthRoute path={"/profile/edit"} exact>
-          {/* {()=>{
+            {/* {()=>{
              return <ProfileEdit />
           }} */}
-          <ProfileEdit />
+            <ProfileEdit />
           </AuthRoute>
-          
+
           <AuthRoute path={"/chat"} exact>
             <Chat />
           </AuthRoute>
+
+          <Route path={"/article/:id"} component={Article}></Route>
         </Switch>
       </Suspense>
     </div>

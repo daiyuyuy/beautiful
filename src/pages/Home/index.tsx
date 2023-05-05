@@ -34,7 +34,7 @@ const Home = () => {
   });
 
   useEffect(() => {
-    dispatch(getArticleList(currentChannelId));
+    dispatch(getArticleList(currentChannelId, Date.now().toString()));
   }, [dispatch, currentChannelId]);
 
   useEffect(() => {
@@ -79,8 +79,7 @@ const Home = () => {
         {userChannels.map((chls) => {
           return (
             <Tabs.Tab title={chls.name} key={"" + chls.id}>
-            
-              <ArticleList channelId={chls.id} />
+              <ArticleList channelId={chls.id} key={"" + chls.id}/>
             </Tabs.Tab>
           );
         })}

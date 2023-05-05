@@ -1,7 +1,8 @@
 import classnames from "classnames";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Icon from "../../../components/Icon";
 import styles from "./index.module.scss";
+// import { entries } from "lodash";
 
 type Props = {
   src: string;
@@ -14,13 +15,41 @@ type Props = {
  */
 const Image = ({ src, className }: Props) => {
   // 记录图片加载是否出错的状态
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState<boolean>(false);
 
   // 记录图片是否正在加载的状态
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // 对图片元素的引用
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    //创建IntersectionObserver，监听当前组件的img标签
+    const observer = new IntersectionObserver((entries) => {
+      console.log(entries);
+
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+
+          //判断当前img是否已经有src属性了，如果有了，则不再进行设置
+          // if (!img.src) {
+
+          img.src = img.dataset.src || "";
+          // }
+
+          // observer.disconnect();
+
+          return () => {
+            observer.disconnect();
+          };
+        }
+      }
+    });
+
+    //在组件销毁时，关闭监听
+    observer.observe(imgRef.current!);
+  }, []);
 
   return (
     <div className={classnames(styles.root, className)}>

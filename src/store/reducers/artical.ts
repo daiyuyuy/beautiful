@@ -1,4 +1,4 @@
-import { ArticleItemDataPage } from "src/types/data";
+import { ArticleInfo, ArticleItemDataPage } from "src/types/data";
 import { RootAction } from "src/types/store";
 
 type ArticleState = {
@@ -7,10 +7,13 @@ type ArticleState = {
   channelArticles: {
     [key: number]: ArticleItemDataPage;
   };
+  //文章详情
+  articleInfo: ArticleInfo;
 };
 
 const initState: ArticleState = {
   channelArticles: {},
+  articleInfo: {} as ArticleInfo,
 };
 
 export function articleReducer(
@@ -25,6 +28,13 @@ export function articleReducer(
         ...state.channelArticles,
         [id]: action.payload.data,
       },
+    };
+  }
+
+  if (action.type === "article/set_article_info") {
+    return {
+      ...state,
+      articleInfo: action.payload,
     };
   }
   return state;
