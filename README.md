@@ -1,10 +1,10 @@
 
 尚有一些bug在更改中
 
-![image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/0UUCZA%5B1AEVHH5M%24F~WVAP4.png)
-![image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/54_F_9AC2_MEY%5D%60DLI%602%5DV6.png)
-![image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/P51%40%5DXI%5DVTIBXJO~%5DM9B9NV.png)
-![image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/Z2%7B9SP7%7B%5DDLVEGCAY~HU%5DDD.png)
+![Image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/0UUCZA%5B1AEVHH5M%24F~WVAP4.png)
+![Image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/54_F_9AC2_MEY%5D%60DLI%602%5DV6.png)
+![Image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/P51%40%5DXI%5DVTIBXJO~%5DM9B9NV.png)
+![Image](https://github.com/daiyuyuy/beautiful/blob/master/image-readme/Z2%7B9SP7%7B%5DDLVEGCAY~HU%5DDD.png)
 
 # Getting Started with Create React App
 
