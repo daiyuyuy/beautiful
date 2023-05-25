@@ -1,3 +1,10 @@
+
+项目接口是别人分享的。
+commit提交是在整个项目写完之后提交的，没有分开每个小模块提交。
+有一些bug还需要更改，目前正在更改中。
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
