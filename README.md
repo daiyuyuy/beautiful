@@ -1,10 +1,3 @@
-
-
-有一些bug还需要更改，目前正在更改中。
-
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
